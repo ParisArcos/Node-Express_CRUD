@@ -2,6 +2,7 @@ const express = require("express");
 const router = require("./routes/index.routes");
 const exphbs = require("express-handlebars").engine;
 const path = require("path");
+const morgam = require("morgan");
 
 const app = express();
 
@@ -25,7 +26,11 @@ app.engine(
 //? establecemos el template engine
 app.set("view engine", ".hbs");
 
-//?Routes
+//!Middleware
+app.use(morgam("dev"));
+app.use(express.urlencoded({ extended: false }));
+
+//!Routes
 app.use(router);
 
 module.exports = app;
