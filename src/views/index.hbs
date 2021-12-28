@@ -1,18 +1,5 @@
 <h1>This is index Page</h1>
-<form action="/tasks/add" method="POST">
-<div>
-<label for="title">TITLE:</label>
-    <input type="text" name="title" id="tile"></input>
-</div>
-<div>
-<label for="description">DESCRIPTION:</label>
-    <textarea type="text" name="description" id="tile"></textarea>
-</div>
-<div><input type="submit" value="Submit"></div>
+{{>tasks/taskForm}}
+{{>tasks/taskTable}}
 
-</form>
-<ul>
-{{#each tasks}}
-<li>{{this}}</li>
-{{/each}}
-</ul>
+
