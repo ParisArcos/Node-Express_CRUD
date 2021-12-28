@@ -6,7 +6,7 @@ const morgam = require("morgan");
 
 const app = express();
 
-//! TEMPLATE ENGINE
+//! Template Engine
 //? establecemos donde estan las vistas
 app.set("views", path.join(__dirname + "/views"));
 
@@ -33,4 +33,6 @@ app.use(express.urlencoded({ extended: false }));
 //!Routes
 app.use(router);
 
+//!Static  Files
+app.use(express.static(path.join(__dirname + "/public")));
 module.exports = app;

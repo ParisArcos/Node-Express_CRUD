@@ -1,29 +1,40 @@
-<table>
-    <thead>
-        <tr>
-            <th>Nº</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each tasks}}
-        <tr>
-            <td>{{@index}} </td>
-            <td>{{title}}</td>
-            <td>{{description}}</td>
-            <td>
-                {{#if done}}
-                <a href="/tasks/{{_id}}/toogleDone"><button>Undone</button></a>
-                {{else}}
-                <a href="/tasks/{{_id}}/toogleDone"><button>Done</button></a>
-                {{/if}}
-                <a href="/tasks/{{_id}}/edit"><button>Edit</button></a>
-                <a href="/tasks/{{_id}}/delete"><button>Delete</button></a>
+{{#if tasks}}
+    <table class="table table-bordered table-hover table-dark">
+        <thead>
+            <tr>
+                <th>Nº</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each tasks}}
+            <tr>
+                <td>{{@index}} </td>
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+                <td>
+                    {{#if done}}
+                    <a href="/tasks/{{_id}}/toogleDone"><button class="btn btn-warning btn-sm m-1">Undone</button></a>
+                    {{else}}
+                    <a href="/tasks/{{_id}}/toogleDone"><button class="btn btn-success btn-sm m-1">Done</button></a>
+                    {{/if}}
+                    <a href="/tasks/{{_id}}/edit"><button class="btn btn-info btn-sm m-1">Edit</button></a>
+                    <a href="/tasks/{{_id}}/delete"><button class="btn btn-danger btn-sm m-1">Delete</button></a>
 
-            </td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+{{else}}
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="text-center">
+        <h1>No tasks</h1>
+        <img src="/icons/task.png" alt="Tasks-img" class="w-75">
+    </div>
+</div>
+    
+{{/if}}
