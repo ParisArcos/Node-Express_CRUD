@@ -15,12 +15,12 @@
             <td>{{description}}</td>
             <td>
                 {{#if done}}
-                <a href="/toogleDone/{{_id}}"><button>Undone</button></a>
+                <a href="/tasks/{{_id}}/toogleDone"><button>Undone</button></a>
                 {{else}}
-                <a href="/toogleDone/{{_id}}"><button>Done</button></a>
+                <a href="/tasks/{{_id}}/toogleDone"><button>Done</button></a>
                 {{/if}}
-                <a href="/edit/{{_id}}"><button>Edit</button></a>
-                <a href="/delete/{{_id}}"><button>Delete</button></a>
+                <a href="/tasks/{{_id}}/edit"><button>Edit</button></a>
+                <a href="/tasks/{{_id}}/delete"><button>Delete</button></a>
 
             </td>
         </tr>
